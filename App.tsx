@@ -1,45 +1,23 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+import React from "react";
+import { View, Text, TouchableOpacity } from "react-native";
 
-import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
-import {
-  SafeAreaProvider,
-  useSafeAreaInsets,
-} from 'react-native-safe-area-context';
-
-function App() {
-  const isDarkMode = useColorScheme() === 'dark';
-
+export default function App() {
   return (
-    <SafeAreaProvider>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <AppContent />
-    </SafeAreaProvider>
-  );
-}
+    <View className="flex-1 items-center justify-center bg-gray-100">
+      {/* Title */}
+      <Text className="text-3xl font-extrabold text-green-700 mb-4">
+        🚀 Welcome to NativeWind
+      </Text>
 
-function AppContent() {
-  const safeAreaInsets = useSafeAreaInsets();
+      {/* Subtitle */}
+      <Text className="text-lg text-gray-600 mb-6 text-center px-6">
+        TailwindCSS is working perfectly with React Native.
+      </Text>
 
-  return (
-    <View style={styles.container}>
-      <NewAppScreen
-        templateFileName="App.tsx"
-        safeAreaInsets={safeAreaInsets}
-      />
+      {/* Button */}
+      <TouchableOpacity className="px-6 py-3 bg-green-500 rounded-2xl shadow-md active:bg-green-600">
+        <Text className="text-white font-semibold text-lg">Get Started</Text>
+      </TouchableOpacity>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
-
-export default App;
